@@ -1,96 +1,97 @@
 //центровщик
 @mixin wrap($width, $wrapmr, $wrapml) {
-    width: $width;
-    margin-right: $wrapmr;
-    margin-left: $wrapml;
+  width: $width;
+  margin-right: $wrapmr;
+  margin-left: $wrapml;
 }
 //шрифты
 @mixin font($fw, $fs, $lh, $color, $textdecor) {
-    font-weight: $fw;
-    font-size: $fs;
-    line-height: $lh;
-    color: $color;
-    text-decoration: $textdecor;
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
+  text-decoration: $textdecor;
 }
 //Псевдоэлементы(before, after)
-@mixin pseudo-element($content: '', $display: block, $pos: absolute) {
-    content: $content;
-    display: $display;
-    position: $pos;
+@mixin pseudo-element($content: "", $display: block, $pos: absolute) {
+  content: $content;
+  display: $display;
+  position: $pos;
 }
 //псевдоклассы для ссылок
-@mixin link ($link, $visit, $hover, $active) {
-    a {
-        color: $link;
-        &:visited {
-            color: $visit;
-        }
-        &:hover {
-            color: $hover;
-        }
-        &:active {
-            color: $active;
-        }
+@mixin link($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+    &:visited {
+      color: $visit;
     }
+    &:hover {
+      color: $hover;
+    }
+    &:active {
+      color: $active;
+    }
+  }
 }
 //css-треугольники если нужно ?
 @mixin triangle($width, $direction, $color) {
-    width: 0;
-    height: 0;
-    @if $direction == up {
-        border-left: $width solid transparent;
-        border-right: $width solid transparent;
-        border-bottom: $width solid $color;
-}
-    @if $direction == down {
-        border-left: $width solid transparent;
-        border-right: $width solid transparent;
-        border-bottom: $width solid $color;
-}
-    @if $direction == left {
-        border-left: $width solid transparent;
-        border-right: $width solid transparent;
-        border-bottom: $width solid $color;
-}
-    @if $direction == right {
-        border-left: $width solid transparent;
-        border-right: $width solid transparent;
-        border-bottom: $width solid $color;
-}
+  width: 0;
+  height: 0;
+  @if $direction == up {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $width solid $color;
+  }
+  @if $direction == down {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $width solid $color;
+  }
+  @if $direction == left {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $width solid $color;
+  }
+  @if $direction == right {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $width solid $color;
+  }
 }
 //placeholder
 @mixin placeholder($color, $size, $weight) {
-    &::-webkit-input-placeholder {
-        color: $color;
-        font-size: $size;
-        font-weight: $weight;
-    }
-    &:-moz-placeholder {
-        color: $color;
-        font-size: $size;
-        font-weight: $weight;
-    }
-    &::-moz-placeholder {
-        color: $color;
-        font-size: $size;
-        font-weight: $weight;
-    }
-    &:-ms-input-placeholder {
-        color: $color;
-        font-size: $size;
-        font-weight: $weight;
-    }
+  &::-webkit-input-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+  }
+  &:-moz-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+  }
+  &::-moz-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+  }
 }
-// media query 
+// media query
 @mixin mq($width, $type: min) {
-    @if map_has_key($breakpoints, $width) {
-        $width: map_get($breakpoints, $width);
-        @if $type == max {
-        $width: $width - 1px;
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
     }
-    
+
     @media only screen and (#{$type}-width: $width) {
         @content;
     }
     }
 }
+

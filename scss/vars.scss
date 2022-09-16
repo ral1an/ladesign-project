@@ -10,15 +10,17 @@ $font-light: 300;
 $font-regular: 400;
 
 $color-white: #ffffff;
+$color-black: #000000;
 $color-text: #3D3D3D;
 $color-backoground-layer: rgba(0, 0, 0, 0.6);
 $color-text-form: #ADADAD;
-$color-lines: #D5D5D5;
+$color-gray: #878787;
+$color-line: #D5D5D5;
+$color-line-red: solid #EB5757;
 $color-footer: #F7F7F7;
 $color-button: #393246;
 $color-button-pressed: #4A415A;
-$color-button-bressed2: #63557C;
-$color-line-red: solid #EB5757;
+$color-button-pressed2: #63557C;
 
 $breakpoints: (
     "phone":        320px,
